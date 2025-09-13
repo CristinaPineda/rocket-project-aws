@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rocket-project</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div class="page-cloud">
-    <img src="page-cloud-wide.jpeg" alt="">
+    <img src="page-cloud-wide.jpeg" alt="Imagem de nuvem com dados sendo processados" class="hero-image">
   </div>
     <div class="container">
         <header>
@@ -18,74 +19,88 @@
 
         <main class="project-details">
             <section class="section">
-                <h2>Sobre o Projeto</h2>
-                <p>Este projeto demonstra a criação de uma, <strong>infraestruetura de dados</strong> completa na Amazon Web Services (AWS), desde a ingestão até a visualização de insights. A arquitetura foi projetada para ser escalável, resiliente e eficiente.</p>
+                <h2><i class="fas fa-info-circle"></i> Sobre o Projeto</h2>
+                <p>Este projeto demonstra a criação de uma <strong>infraestrutura de dados</strong> completa na Amazon Web Services (AWS), desde a ingestão até a visualização de insights. A arquitetura foi projetada para ser escalável, resiliente e eficiente.</p>
             </section>
 
             <section class="section">
-                <h2>Tecnologias Utilizadas</h2>
+                <h2><i class="fas fa-tools"></i> Tecnologias Utilizadas</h2>
                 <p>Principais ferramentas e serviços da AWS usados neste projeto:</p>
                 <ul>
-                    <li><strong>Amazon S3:</strong> Para armazenamento seguro e escalável dos dados brutos.</li>
-                    <li><strong>AWS Glue:</strong> Para ETL (Extração, Transformação e Carga) dos dados.</li>
-                    <li><strong>Amazon Athena:</strong> Para análise interativa de dados diretamente no S3.</li>
-                    <li><strong>Amazon QuickSight:</strong> Para criação de dashboards e visualizações interativas.</li>
-                    <li><strong>AWS Lambda:</strong> Para automação e orquestração de tarefas.</li>
-                    <li><strong>Amazon Simple Notification Service:</strong> Para envio de notificações e mensagens entre serviços.</li>
-                    <li><strong>Amazon Simple Queue Service:</strong>Para gerenciamento de filas de mensagens entre serviços.</li>
-                    <li><strong>Amazon SageMaker:</strong>Para construção, treinamento e implantação de modelos de machine learning.</li>
+                    <li><i class="fas fa-database"></i> <strong>Amazon S3:</strong>  Para armazenamento seguro e escalável dos dados brutos.</li>
+                    <li><i class="fas fa-cogs"></i> <strong>AWS Glue:</strong>  Para ETL (Extração, Transformação e Carga) dos dados.</li>
+                    <li><i class="fas fa-search"></i> <strong>Amazon Athena:</strong>  Para análise interativa de dados diretamente no S3.</li>
+                    <li><i class="fas fa-chart-line"></i> <strong>Amazon QuickSight:</strong>  Para criação de dashboards e visualizações interativas.</li>
+                    <li><i class="fas fa-flask"></i> <strong>AWS Lambda:</strong>  Para automação e orquestração de tarefas.</li>
+                    <li><i class="fas fa-bell"></i> <strong>Amazon Simple Notification Service (SNS):</strong>  Para envio de notificações e mensagens entre serviços.</li>
+                    <li><i class="fas fa-stream"></i> <strong>Amazon Simple Queue Service (SQS):</strong>  Para gerenciamento de filas de mensagens entre serviços.</li>
+                    <li><i class="fas fa-robot"></i> <strong>Amazon SageMaker:</strong>  Para construção, treinamento e implantação de modelos de machine learning.</li>
                 </ul>
             </section>
 
             <section class="section">
-                <h2>Arquitetura</h2>
+                <h2><i class="fas fa-project-diagram"></i> Arquitetura</h2>
                 <p>A arquitetura da pipeline segue as melhores práticas da AWS, com dados fluindo de uma área de ingestão (S3) para uma área de processamento (Glue) e, finalmente, para um data warehouse/mart para análise.</p>
                 </section>
 
             <section class="section">
-                <h2>Resultados e Insights</h2>
-                <p>Com esta pipeline, fomos capazes de processar grandes volumes de dados de forma eficiente e gerar os seguintes insights:</p>
+                <h2><i class="fas fa-chart-bar"></i> Resultados e Insights</h2>
+                <p>Com esta pipeline, é possível processar grandes volumes de dados de forma eficiente e gerar diversos insights:</p>
+                <p>Especificamente para esse caso de uso no projeto a escolha foi o tema Portos Nacionais. </p>
                 <ul>
-                  <li>Análise do **fluxo de carga** por porto e tipo de mercadoria.</li>
-                  <li>Identificação dos **períodos de pico** e de baixa atividade nos terminais.</li>
-                  <li>Previsão da **demanda de navios** e otimização de berços para o próximo trimestre.</li>
-                  <li>Previsão e mitigação de problemas comuns nos portos.</li>
+                  <li><i class="fas fa-ship"></i> Análise do fluxo de carga por porto e tipo de mercadoria.</li>
+                  <li><i class="fas fa-clock"></i> Identificação dos períodos de pico e de baixa atividade nos terminais.</li>
+                  <li><i class="fas fa-shipping-fast"></i> Previsão da demanda de navios e otimização da logística.</li>
+                  <li><i class="fas fa-exclamation-triangle"></i> Previsão e mitigação de problemas comuns nos portos.</li>
                 </ul>
             </section>
+
             <section class="section">
-                <h2>Diagrama da Arquitetura</h2>
+                <h2><i class="fas fa-sitemap"></i> Diagrama da Arquitetura</h2>
                 <p>Abaixo está o diagrama que ilustra a arquitetura da pipeline de dados implementada na AWS:</p>
                 <img src="rocket-project-drawio.jpeg" alt="Diagrama da Arquitetura" class="architecture-diagram">
+            </section>
             
             <section class="section">
-                <h2>Infraestrutura como Código (IaC)</h2>
+                <h2><i class="fas fa-code"></i> Infraestrutura como Código (IaC)</h2>
                 <p>A automação e a resiliência do projeto são garantidas através do uso de <strong>Infraestrutura como Código (IaC)</strong>. Todo o ambiente AWS, incluindo buckets S3, pipelines do AWS Glue e clusters Redshift, foi provisionado e configurado usando scripts de automação.</p>
-                <p>Utilizamos o <strong>GitHub Actions</strong> para orquestrar e gerenciar todo esse processo. Cada alteração no código do projeto ou nos scripts de infraestrutura dispara automaticamente um fluxo de trabalho que:</p>
+                <p>Utilizei o <strong>GitHub Actions</strong> para orquestrar e gerenciar todo esse processo. Cada alteração no código do projeto ou nos scripts de infraestrutura dispara automaticamente um fluxo de trabalho que:</p>
                 <ul>
-                  <li>Valida a sintaxe e a lógica dos scripts de infraestrutura.</li>
-                  <li>Executa o provisionamento dos serviços necessários na AWS.</li>
-                  <li>Garante que o ambiente esteja sempre atualizado e em sincronia com o código-fonte do repositório.</li>
+                  <li><i class="fas fa-check-circle"></i> Valida a sintaxe e a lógica dos scripts de infraestrutura.</li>
+                  <li><i class="fas fa-cogs"></i> Executa o provisionamento dos serviços necessários na AWS.</li>
+                  <li><i class="fas fa-sync-alt"></i> Garante que o ambiente esteja sempre atualizado e em sincronia com o código-fonte do repositório.</li>
                 </ul>
                 <p>Essa abordagem elimina o trabalho manual e repetitivo, garantindo consistência, rastreabilidade e um processo de deploy seguro e eficiente. O GitHub Actions atua como o motor do nosso pipeline de CI/CD (Continuous Integration/Continuous Deployment), conectando o nosso repositório diretamente à nuvem da AWS.</p>
             </section>
 
             <section class="section">
-                <h2>Origem dos Dados</h2>
-                <p>Os dados utilizados neste projeto são de domínio público e foram obtidos através do portal <strong>Data Gov BR</strong>. Especificamente, a análise se concentra em conjuntos de dados sobre a movimentação de cargas e navios nos portos brasileiros, disponibilizados pelo governo para promover a transparência e a inovação.</p>
+                <h2><i class="fas fa-globe-americas"></i> Origem dos Dados</h2>
+                <p>Os dados utilizados neste projeto são de domínio público e foram obtidos através do portal <strong>dados.gov.br</strong>. Especificamente, a análise se concentra em conjuntos de dados sobre a movimentação de cargas e navios nos portos brasileiros, disponibilizados pelo governo para promover a transparência e a inovação.</p>
                 <p>A escolha dessa fonte de dados reforça o objetivo do projeto de utilizar informações de alta relevância e qualidade para gerar insights sobre a logística portuária nacional, demonstrando como dados abertos podem ser transformados em conhecimento valioso com o uso de ferramentas de computação em nuvem como a AWS.</p>
             </section>
         </main>
 
         <div class="button-container">
-            <a Aws SNS href="https://github.com/CristinaPineda/infra-sns-rocket_project" class="btn">Ver Código no GitHub</a>
-            <a Aws SQS href="https://github.com/CristinaPineda/infra-sqs-rocket_project-" class="btn">Ver Código no GitHub</a>
-            <a Aws Lambda e S3href="https://github.com/CristinaPineda/infra-lambda-rocket-project" class="btn">Ver Código no GitHub</a>
-            <a Aws Glue href="https://github.com/CristinaPineda/infra-glue-rocket-project" class="btn">Ver Código no GitHub</a>
-            <a Aws Athena href="LINK_DO_SEU_REPOSITORIO" class="btn">Ver Código no GitHub</a>
+            <h3>Acesse os repositórios do projeto:</h3>
+          <div class="buttons">
+            <a href="https://github.com/CristinaPineda/infra-sns-rocket_project" class="btn"><i class="fab fa-github"></i> AWS SNS</a>
+            <a href="https://github.com/CristinaPineda/infra-sqs-rocket_project-" class="btn"><i class="fab fa-github"></i> AWS SQS</a>
+            <a href="https://github.com/CristinaPineda/infra-lambda-rocket-project" class="btn"><i class="fab fa-github"></i> AWS Lambda e S3</a>
+            <a href="https://github.com/CristinaPineda/infra-glue-rocket-project" class="btn"><i class="fab fa-github"></i> AWS Glue</a>
+            <a href="LINK_DO_SEU_REPOSITORIO_ATHENA" class="btn"><i class="fab fa-github"></i> AWS Athena</a>
+          </div>
         </div>
 
         <footer>
             <p>&copy; 2025 Cristina Pineda. Projeto de Demonstração.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/cristina-pineda/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/CristinaPineda" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
         </footer>
     </div>
 

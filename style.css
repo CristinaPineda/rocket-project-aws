@@ -3,29 +3,39 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #3f2854;
+    background-color: #3f2854; /* Seu background-color */
     color: #333;
 }
 
 .page-cloud {
   background-color: #081325;
+    width: 100%;
+    overflow: hidden;
     text-align: center;
     margin: auto;
-    img {
-        padding-top: 20px;
-        max-width: 100%;
-        height: auto;
 }
+
+.page-cloud img {
+  padding-top: 20px;
+  max-width: 100%;
+  height: auto;
 }
+
+@media (max-width: 480px) {
+  .page-cloud img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 .container {
     max-width: 70rem;
-    margin: 5px auto;
+    margin: 1px auto; 
     padding: 20px;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 header {
     text-align: center;
@@ -58,7 +68,7 @@ p.subtitle {
 }
 
 h2 {
-    color: #34495e;
+    color: #125394ff;
     border-bottom: 2px solid #bdc3c7;
     padding-bottom: 5px;
     margin-bottom: 15px;
@@ -72,10 +82,15 @@ ul {
 .button-container {
     text-align: center;
     margin-top: 30px;
+    display: flex; /* Adicionado para alinhar os botões lado a lado */
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas menores */
+    justify-content: center; /* Centraliza os botões */
+    gap: 15px; /* Espaçamento entre os botões */
 }
 
 .btn {
-    display: inline-block;
+    display: inline-flex; /* Alterado para inline-flex para alinhar ícone e texto */
+    align-items: center; /* Centraliza verticalmente o ícone e o texto */
     padding: 12px 25px;
     background-color: #3498db;
     color: #fff;
@@ -89,10 +104,156 @@ ul {
     background-color: #2980b9;
 }
 
+/* ... (Seu CSS existente) ... */
+
 footer {
     text-align: center;
     margin-top: 40px;
-    padding-top: 20px;
-    border-top: 2px solid #eee;
+    padding-top: 0; /* REMOVIDO: padding-top do footer */
+    border-top: none; /* REMOVIDO: border-top do footer */
     color: #7f8c8d;
+}
+
+/* Adiciona a borda apenas ao parágrafo do copyright */
+footer p {
+    padding-top: 20px; /* Adiciona o padding que estava no footer ao parágrafo */
+    border-top: 2px solid #eee; /* A borda agora está no parágrafo */
+    margin-bottom: 15px; /* Adiciona um espaço abaixo do parágrafo antes dos ícones */
+}
+
+/* Estilos para o bloco de redes sociais no footer */
+footer .social-links {
+    margin-top: 0; /* Ajustado para 0, pois a margem já está no parágrafo acima */
+    padding-bottom: 20px; /* Adiciona padding na parte inferior do footer se necessário */
+}
+
+footer .social-links a {
+    color: #5d6d7e;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #3498db;
+}
+
+footer .social-links .fab {
+    margin-right: 0;
+}
+
+/* Estilo geral para todos os ícones Font Awesome (mantido) */
+.fas, .fab {
+    margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+    color: #3498db;    /* Cor padrão para os ícones (azul AWS) */
+}
+
+/* Ícones dentro de títulos h2 (mantido) */
+h2 .fas, h2 .fab {
+    font-size: 1.1em; /* Um pouco maior que o texto do título */
+    color: #0bbcd3ff; /* Usando sua cor de h2 para os ícones nos títulos */
+}
+
+/* Ícones dentro de itens de lista (ul li) (mantido) */
+ul li .fas, ul li .fab {
+    margin-right: 10px;
+    margin-left: 12px; /* Ajuste fino para alinhamento */
+    color: #5d6d7e; /* Cor mais suave para ícones de lista */
+}
+
+/* Ícones nos botões do GitHub (mantido) */
+.btn .fab {
+    margin-right: 8px;
+    color: #fff; /* Ícone branco para combinar com o botão azul */
+}
+
+/* Estilo para o diagrama de arquitetura (mantido) */
+.architecture-diagram {
+    max-width: 100%; /* Garante que a imagem do diagrama seja responsiva */
+    height: auto;
+    display: block; /* Remove espaço extra abaixo da imagem */
+    margin: 20px auto; /* Centraliza a imagem e adiciona margem */
+    border: 1px solid #ccc; /* Uma borda sutil para o diagrama */
+    border-radius: 5px;
+}
+
+/* ... (Seu CSS existente) ... */
+
+/* Novo CSS para alinhar o texto após os ícones nas listas */
+ul {
+    /* Remove o estilo de bullet padrão da lista */
+    list-style: none; 
+    /* Remove o padding padrão da lista para alinhar o conteúdo à esquerda */
+    padding-left: 0; 
+}
+
+ul li {
+    display: flex; /* Transforma cada item da lista em um contêiner flexível */
+    align-items: flex-start; /* Alinha o conteúdo ao topo de cada linha (útil para quebras de linha longas) */
+    margin-bottom: 10px; /* Adiciona espaçamento entre os itens da lista */
+}
+
+/* Garante que o ícone tenha um espaçamento fixo à direita */
+ul li .fas,
+ul li .fab {
+    margin-right: 15px; /* Aumenta um pouco o espaçamento para que o texto se alinhe bem */
+    flex-shrink: 0; /* Impede que o ícone encolha se o espaço for limitado */
+    width: 20px; /* Define uma largura fixa para o ícone */
+    text-align: center; /* Centraliza o ícone dentro da sua largura fixa */
+}
+
+/* Estilo para o texto que vem depois do ícone */
+ul li p,
+ul li strong {
+    margin: 0; /* Remove margens padrão para evitar espaçamento extra */
+}
+
+
+@media (max-width: 680px) {
+    .container {
+        padding: 10px;
+        margin: 5px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .project-details {
+        h2 {
+            font-size: 1.2em;
+        }
+
+        p {
+            font-size: 0.9em;
+            text-align: center;
+        } 
+    } 
+
+    .section {
+        padding: 15px;
+        ul {
+            padding: 5px;
+        }
+        ul li {
+          flex-direction: column;
+          margin-bottom: 20x;
+        }
+        ul li .fas,
+        ul li .fab {
+            margin-right: 10px;
+            width: 15x;
+            font-size: 0.9em;
+        }
+    }
+
+    .button-container .buttons {
+      display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button-container .buttons a {
+        margin: 5px auto;
+    }
 }
